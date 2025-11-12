@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt Builder
+name: OpenWrt Builder UA3F
 
 on:
   repository_dispatch:
@@ -81,8 +81,7 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
-    - name: Download package
-      id: package
+    - name: 编译UA3F单个包
       run: |
         cd openwrt
         make package/UA3F/openwrt/compile -j1 V=sc # 编译UA3F单个包
